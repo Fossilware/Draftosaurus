@@ -1,0 +1,471 @@
+/* Dashboard Styles - Draftosaurus FossilWare */
+
+/* Navbar */
+.bg-dark-green {
+    background: linear-gradient(135deg, #2d5016 0%, #5a8f3a 100%) !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-brand img {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Layout Principal */
+.dashboard-body {
+    background: linear-gradient(135deg, #f0f4ec 0%, #e8f5e9 100%);
+    min-height: 100vh;
+}
+
+.main-container {
+    padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    background: white;
+    min-height: calc(100vh - 56px);
+    padding: 20px 15px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-sidebar {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.profile-avatar-sidebar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .nav-link {
+    color: var(--text-dark);
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+/* Contenido Principal */
+.main-content {
+    padding: 30px;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.welcome-logo {
+    max-width: 200px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Game Mode Cards */
+.game-mode-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-mode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mode-regular {
+    border-top: 5px solid #667eea;
+}
+
+.mode-tracking {
+    border-top: 5px solid #f093fb;
+}
+
+.mode-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 40px;
+    color: white;
+}
+
+.mode-regular .mode-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mode-tracking .mode-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.mode-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.mode-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.mode-features {
+    margin: 20px 0 30px;
+    flex-grow: 1;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.feature-item i {
+    color: var(--success-color);
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.player-selector {
+    margin-bottom: 20px;
+}
+
+.player-selector .form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.player-selector .form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.player-selector .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(90, 143, 58, 0.25);
+}
+
+/* Botones de Modo */
+.btn-mode {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-mode-regular {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-mode-regular:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-mode-tracking {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-mode-tracking:hover {
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(240, 147, 251, 0.4);
+    color: white;
+}
+
+/* Sección de Estadísticas */
+.stats-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.section-title i {
+    margin-right: 10px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.stat-content h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.stat-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Sección de Reglas */
+.rules-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rules-accordion {
+    margin-top: 20px;
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(90, 143, 58, 0.25);
+    border-color: var(--secondary-color);
+}
+
+.accordion-body {
+    line-height: 1.8;
+}
+
+.accordion-body ul {
+    margin: 10px 0;
+    padding-left: 25px;
+}
+
+.accordion-body li {
+    margin-bottom: 8px;
+}
+
+.accordion-body strong {
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .welcome-card {
+        padding: 25px;
+    }
+    
+    .welcome-logo {
+        max-width: 150px;
+        margin-top: 20px;
+    }
+    
+    .game-mode-card {
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .mode-title {
+        font-size: 1.5rem;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-card h1 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-card .lead {
+        font-size: 1rem;
+    }
+    
+    .mode-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .stat-content h4 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animaciones */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-mode-card {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.game-mode-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-card {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Estilos adicionales para links */
+.rules-section a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rules-section a:hover {
+    transform: translateY(-2px);
+}
+
+/* Mejoras visuales del accordion */
+.accordion-item {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(13%) saturate(1847%) hue-rotate(62deg);
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mejoras para accesibilidad */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 3px solid rgba(90, 143, 58, 0.4);
+    outline-offset: 2px;
+}
+
+/* Loader personalizado */
+.spinner-border-custom {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.4rem;
+    border-color: var(--secondary-color);
+    border-right-color: transparent;
+}
