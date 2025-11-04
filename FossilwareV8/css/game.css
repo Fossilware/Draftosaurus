@@ -1,0 +1,438 @@
+/* ================================================================
+   DRAFTOSAURUS - GAME CSS
+   Estilos para modos de juego (Regular y Seguimiento)
+   ================================================================ */
+
+/* ============== BODY Y NAVBAR ============== */
+.game-body {
+    background: #f5f7fa !important;
+    min-height: 100vh;
+    padding-top: 76px; /* Espacio para navbar fijo */
+    display: block !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+}
+
+/* Asegurar que no herede estilos del index/login */
+body.game-body {
+    background-image: none !important;
+    background-attachment: unset !important;
+}
+
+.bg-dark-green {
+    background: linear-gradient(135deg, #2d5016 0%, #5a8f3a 100%) !important;
+}
+
+/* ============== CONTAINER PRINCIPAL ============== */
+.game-container {
+    max-width: 1200px;
+    padding: 30px 15px;
+}
+
+/* ============== SETUP CARD ============== */
+.setup-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+/* ============== GAME TITLE ============== */
+.game-mode-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.game-title {
+    color: #2d5016;
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.game-subtitle {
+    color: #6c757d;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+/* ============== SECTION TITLES ============== */
+.section-title {
+    color: #2d5016;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #e0e0e0;
+}
+
+.section-title i {
+    font-size: 1.6rem;
+    color: #5a8f3a;
+}
+
+/* ============== PLAYER SETUP CARDS ============== */
+.player-setup-card {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.player-setup-card:hover {
+    border-color: #5a8f3a;
+    box-shadow: 0 4px 15px rgba(90, 143, 58, 0.2);
+    transform: translateY(-2px);
+}
+
+.player-card-header {
+    padding: 15px 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.player-number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-card-body {
+    padding: 25px;
+    background: #fafafa;
+}
+
+/* ============== COLOR DISPLAY ============== */
+.color-display {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ============== GAME OPTIONS ============== */
+.game-options {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+}
+
+.option-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover {
+    border-color: #5a8f3a;
+    box-shadow: 0 2px 10px rgba(90, 143, 58, 0.1);
+}
+
+.option-card:last-child {
+    margin-bottom: 0;
+}
+
+/* ============== FORM CONTROLS ============== */
+.form-label {
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #5a8f3a;
+    box-shadow: 0 0 0 0.2rem rgba(90, 143, 58, 0.25);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+/* ============== FORM SWITCHES ============== */
+.form-check-input {
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #5a8f3a;
+    border-color: #5a8f3a;
+}
+
+.form-check-input:focus {
+    border-color: #5a8f3a;
+    box-shadow: 0 0 0 0.2rem rgba(90, 143, 58, 0.25);
+}
+
+.form-check-label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* ============== ACTION BUTTONS ============== */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-start {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-start:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-start:active {
+    transform: translateY(-1px);
+}
+
+/* ============== TUTORIAL CARD ============== */
+.tutorial-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #667eea;
+}
+
+.tutorial-card h4 {
+    color: #2d5016;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tutorial-list {
+    padding-left: 25px;
+    line-height: 2;
+    color: #495057;
+}
+
+.tutorial-list li {
+    margin-bottom: 10px;
+}
+
+.tutorial-list li::marker {
+    color: #5a8f3a;
+    font-weight: bold;
+}
+
+/* ============== ALERT STYLES ============== */
+.alert-info {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    color: #2d5016;
+}
+
+.alert-info strong {
+    color: #667eea;
+}
+
+/* ============== MODAL STYLES ============== */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2d5016 0%, #5a8f3a 100%);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 30px;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.rules-section-title {
+    color: #2d5016;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* ============== TABLE STYLES ============== */
+.table {
+    margin-top: 15px;
+}
+
+.table-dark {
+    background: #2d5016;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(90, 143, 58, 0.05);
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px 10px;
+    }
+    
+    .setup-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    .game-title {
+        font-size: 2rem;
+    }
+    
+    .game-mode-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .player-card-body {
+        padding: 20px 15px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .tutorial-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-body {
+        padding-top: 66px;
+    }
+    
+    .setup-card {
+        padding: 20px 15px;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .player-card-header {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .game-options {
+        padding: 20px 15px;
+    }
+    
+    .option-card {
+        padding: 15px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+}
+
+/* ============== ANIMATIONS ============== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.setup-card,
+.tutorial-card {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.player-setup-card {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.player-setup-card:nth-child(1) { animation-delay: 0.1s; }
+.player-setup-card:nth-child(2) { animation-delay: 0.2s; }
+.player-setup-card:nth-child(3) { animation-delay: 0.3s; }
+.player-setup-card:nth-child(4) { animation-delay: 0.4s; }
+.player-setup-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* ============== UTILITIES ============== */
+.text-muted {
+    color: #6c757d !important;
+}
+
+small.text-muted {
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+}

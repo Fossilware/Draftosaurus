@@ -1,0 +1,1107 @@
+/* ================================================================
+   🦕 DRAFTOSAURUS - DASHBOARD CSS - FOSSILWARE
+   Diseño Premium con Background Personalizable
+   ================================================================ */
+
+/* ============== VARIABLES DE COLOR ============== */
+:root {
+    --primary-green: #2d5016;
+    --secondary-green: #5a8f3a;
+    --accent-green: #6aa84f;
+    --dark-green: #1a3508;
+    --light-green: #f5f5e8;
+    --text-dark: #50492c;
+    --text-muted: #6c757d;
+    --white: #fffdbd;
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.2);
+    --gradient-green: linear-gradient(135deg, #2d5016 0%, #5a8f3a 100%);
+    --gradient-orange: linear-gradient(135deg, #e5a210 0%, #aa532a 100%);
+    --gradient-yellow: linear-gradient(135deg, #e0e721 0%, #f3c221 100%);
+}
+
+/* ============== FONDO  ============== */
+.dashboard-body {
+    background-image: url('../img/background-index.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Quitar overlay oscuro */
+.dashboard-body::before {
+    display: none !important;
+}
+/* ============== FIN DEL BACKGROUND ============== */
+
+/* ============== NAVBAR SUPERIOR FIJO ============== */
+.bg-dark-green {
+    background: var(--gradient-green) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1050 !important;
+    width: 100% !important;
+}
+
+.navbar {
+    position: relative;
+    z-index: 10;
+}
+
+/* Agregar padding-top al body para compensar navbar fijo */
+body.dashboard-body {
+    padding-top: 56px;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+}
+
+.navbar-brand img {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(-5deg);
+}
+
+/* ============== CONTAINER PRINCIPAL ============== */
+.main-container {
+    position: relative;
+    z-index: 1;
+    padding: 0 !important;
+    min-height: calc(100vh - 56px);
+}
+
+.main-container .row {
+    margin: 0 !important;
+    width: 100%;
+}
+
+/* ============== SIDEBAR FIJO SIN SCROLLBAR ============== */
+.sidebar {
+    background: #fffdbd;
+    padding: 35px 20px;
+    margin: 0 !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid #fff1aa;
+    height: calc(100vh - 56px);
+    width: 280px !important;
+    position: fixed !important;
+    left: 0;
+    top: 56px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+}
+
+/* OCULTAR completamente la scrollbar */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Ajustar columnas para layout fijo */
+.main-container .col-md-3,
+.main-container .col-lg-2 {
+    padding: 0 !important;
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+}
+
+.main-container .col-md-9,
+.main-container .col-lg-10 {
+    padding: 0 !important;
+    width: calc(100% - 280px) !important;
+    min-width: calc(100% - 280px) !important;
+}
+
+/* Scrollbar personalizado - YA NO SE USA, ESTÁ OCULTO */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+/* Perfil del Sidebar */
+.profile-sidebar {
+    text-align: center;
+    padding: 25px 0 30px 0;
+    margin-bottom: 25px;
+    border-bottom: 3px solid rgba(90, 143, 58, 0.2);
+    position: relative;
+}
+
+/* QUITAR el emoji decorativo */
+.profile-sidebar::after {
+    display: none;
+}
+
+.profile-avatar-sidebar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid var(--accent-green);
+    box-shadow: 0 10px 30px rgba(106, 168, 79, 0.4),
+                inset 0 0 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.profile-avatar-sidebar:hover {
+    transform: scale(1.15) rotate(8deg);
+    border-color: var(--secondary-green);
+    box-shadow: 0 15px 40px rgba(106, 168, 79, 0.6),
+                inset 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-sidebar h5 {
+    color: var(--primary-green);
+    font-weight: 800;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-sidebar small {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Navegación del Sidebar */
+.sidebar .nav-link {
+    color: var(--text-dark);
+    padding: 16px 22px;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--accent-green);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar .nav-link:hover::before {
+    transform: scaleY(1);
+}
+
+.sidebar .nav-link i {
+    font-size: 1.4rem;
+    width: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background: linear-gradient(135deg, rgba(106, 168, 79, 0.15), rgba(45, 80, 22, 0.15));
+    color: var(--primary-green);
+    transform: translateX(8px);
+    box-shadow: 0 6px 20px rgba(106, 168, 79, 0.2);
+}
+
+.sidebar .nav-link:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.sidebar .nav-link.active {
+    background: var(--gradient-green);
+    color: #fffed9;
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ============== CONTENIDO PRINCIPAL ============== */
+.main-content {
+    margin-left: 280px !important;
+    padding: 30px 40px 50px 40px !important;
+    width: calc(100% - 280px) !important;
+    max-width: calc(100% - 280px) !important;
+    min-height: calc(100vh - 56px);
+}
+
+/* ============== RESPONSIVE PARA MÓVILES ============== */
+@media (max-width: 767px) {
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        top: 0 !important;
+        left: 0 !important;
+        border-radius: 0 0 20px 20px;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+    }
+    
+    .main-container .col-md-3,
+    .main-container .col-lg-2 {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .main-container .col-md-9,
+    .main-container .col-lg-10 {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+/* ============== TARJETA DE BIENVENIDA ============== */
+.welcome-card {
+    background: linear-gradient( #3e6e20 100%);
+    color: #fcfcec;
+    padding: 50px 45px;
+    border-radius: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración de fondo - SIN EMOJI */
+.welcome-card::before {
+    display: none;
+}
+
+.welcome-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        transparent 70%
+    );
+}
+
+
+.welcome-card h1 {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-card .lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-card .text-muted {
+    color: rgba(255, 255, 255, 0.85) !important;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-logo {
+    max-width: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    25% { 
+        transform: translateY(-15px) rotate(-3deg); 
+    }
+    75% { 
+        transform: translateY(-15px) rotate(3deg); 
+    }
+}
+
+/* ============== TARJETAS DE MODO DE JUEGO ============== */
+.game-mode-card {
+    background: #fffdcb;
+    border-radius: 15px;
+    padding: 40px 35px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid #f0f0f0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.game-mode-card::before {
+    display: none;
+}
+
+.game-mode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.mode-regular {
+    border-color: rgba(234, 166, 102, 0.3);
+}
+
+.mode-regular:hover {
+    border-color: #eaa666;
+    box-shadow: 0 25px 70px rgba(234, 181, 102, 0.5);
+}
+
+.mode-tracking {
+    border-color: rgba(251, 247, 147, 0.3);
+}
+
+.mode-tracking:hover {
+    border-color: #fbf793;
+    box-shadow: 0 25px 70px rgba(251, 242, 147, 0.5);
+}
+
+/* Iconos de Modo */
+.mode-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 3rem;
+    color: #ffffe9;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+}
+
+.mode-regular .mode-icon {
+    background: var(--gradient-orange);
+    box-shadow: 0 10px 35px rgba(255, 255, 254, 0.5);
+}
+
+.mode-tracking .mode-icon {
+    background: var(--gradient-yellow);
+    box-shadow: 0 10px 35px rgba(251, 241, 147, 0.5);
+}
+
+.game-mode-card:hover .mode-icon {
+    transform: scale(1.2) rotate(360deg);
+}
+
+.mode-title {
+    color: var(--primary-green);
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mode-description {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Selector de Jugadores */
+.player-selector {
+    margin: 30px 0;
+}
+
+.player-selector .form-label {
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.player-selector .form-select {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: #fffed9;
+}
+
+.player-selector .form-select:hover {
+    border-color: var(--accent-green);
+}
+
+.player-selector .form-select:focus {
+    border-color: var(--secondary-green);
+    box-shadow: 0 0 0 0.3rem rgba(90, 143, 58, 0.25);
+}
+
+/* Botones de Modo */
+.btn-mode {
+    padding: 18px 35px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border-radius: 18px;
+    border: none;
+    width: 100%;
+    margin-top: auto;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-mode::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-mode:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn-mode-regular {
+    background: var(--gradient-orange);
+    color: #fffff3;
+    box-shadow: 0 8px 25px rgba(234, 190, 102, 0.5);
+}
+
+.btn-mode-regular:hover {
+    background: linear-gradient(135deg, #a2854b 0%, #eac566 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(234, 192, 102, 0.7);
+    color: #fffff3;
+}
+
+.btn-mode-tracking {
+    background: var(--gradient-yellow);
+    color: #fffff3;
+    box-shadow: 0 8px 25px rgba(251, 234, 147, 0.5);
+}
+
+.btn-mode-tracking:hover {
+    background: linear-gradient(135deg, #f5db57 0%, #fbeb93 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(251, 242, 147, 0.7);
+    color: #fffff3;
+}
+
+.btn-mode:active {
+    transform: scale(0.95);
+}
+
+/* ============== SECCIÓN DE ESTADÍSTICAS ============== */
+.stats-section {
+    background: #fffdcb;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 1px solid #fffdbd;
+}
+
+.stats-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section-title {
+    color: var(--primary-green);
+    font-weight: 900;
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title i {
+    font-size: 2.5rem;
+    animation: pulse 2s infinite;
+}
+
+/* Tarjetas de Estadísticas */
+.stat-card {
+    background: #fefdd5;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+    border: 1px solid #fffdbd;
+    position: relative;
+}
+
+/* Tarjeta única centrada */
+.stat-card-single {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.stat-card::before {
+    display: none;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #6aa84f;
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #fffed9;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.15) rotate(10deg);
+}
+
+.stat-content h4 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    color: var(--primary-green);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-content p {
+    margin: 0;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============== SECCIÓN DE REGLAS ============== */
+.rules-section {
+    background: #fffdcb;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border: 1px solid #fffdbd;
+}
+
+.rules-accordion {
+    margin-top: 25px;
+}
+
+.accordion-item {
+    border: 1px solid #fffdd1;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-button {
+    background: #fffed9;
+    color: var(--primary-green);
+    font-weight: 800;
+    padding: 20px 25px;
+    border: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:hover {
+    background: #fffed9;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--gradient-green);
+    color: #fffed9;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.accordion-body {
+    padding: 30px;
+    background: #fffed9;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+}
+
+.accordion-body ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.accordion-body li {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.accordion-body li::marker {
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+.accordion-body strong {
+    color: var(--primary-green);
+    font-weight: 800;
+}
+
+.rules-section .btn {
+    transition: all 0.3s ease;
+}
+
+.rules-section .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(45, 80, 22, 0.3);
+}
+
+/* ============== RESPONSIVE DESIGN ============== */
+@media (max-width: 1200px) {
+    .welcome-card h1 {
+        font-size: 2.5rem;
+    }
+    
+    .mode-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        position: static;
+        margin: 0 20px 30px 20px;
+        max-height: none;
+    }
+    
+    .main-content {
+        padding: 0 20px 40px 20px;
+    }
+    
+    .welcome-card {
+        padding: 40px 30px;
+    }
+    
+    .welcome-card h1 {
+        font-size: 2.2rem;
+    }
+    
+    .welcome-logo {
+        max-width: 150px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-avatar-sidebar {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .sidebar .nav-link {
+        padding: 14px 18px;
+        font-size: 1rem;
+    }
+    
+    .welcome-card {
+        padding: 35px 25px;
+    }
+    
+    .welcome-card h1 {
+        font-size: 1.9rem;
+    }
+    
+    .welcome-card::before {
+        font-size: 12rem;
+        right: -40px;
+        top: -40px;
+    }
+    
+    .mode-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .mode-title {
+        font-size: 1.6rem;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .stat-content h4 {
+        font-size: 2.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-body::before {
+        background: rgba(0, 0, 0, 0.55);
+    }
+    
+    .main-container {
+        padding: 20px 0;
+    }
+    
+    .sidebar,
+    .main-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .welcome-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .welcome-card h1 {
+        font-size: 1.6rem;
+    }
+    
+    .welcome-card .lead {
+        font-size: 1.2rem;
+    }
+    
+    .game-mode-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .btn-mode {
+        padding: 16px 25px;
+        font-size: 1.05rem;
+    }
+    
+    .stats-section,
+    .rules-section {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+}
+
+/* ============== ANIMACIONES Y EFECTOS ============== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-mode-card {
+    animation: slideInUp 0.7s ease-out backwards;
+}
+
+.game-mode-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.game-mode-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.stat-card {
+    animation: slideInUp 0.7s ease-out backwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.2s; }
+.stat-card:nth-child(2) { animation-delay: 0.3s; }
+.stat-card:nth-child(3) { animation-delay: 0.4s; }
+.stat-card:nth-child(4) { animation-delay: 0.5s; }
+
+/* ============== SCROLL SUAVE ============== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============== SCROLLBAR GLOBAL ============== */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-green);
+}
+
+/* ============== ESTADOS DE FOCO (ACCESIBILIDAD) ============== */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 4px solid rgba(90, 143, 58, 0.4);
+    outline-offset: 3px;
+}
+
+/* ============== LOADER PERSONALIZADO ============== */
+.spinner-border-custom {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-width: 0.5rem;
+    border-color: var(--accent-green);
+    border-right-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============== EFECTOS ADICIONALES ============== */
+.welcome-card,
+.game-mode-card,
+.stats-section,
+.rules-section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============== BOTONES HOVER ESPECIALES ============== */
+.btn-outline-primary {
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--gradient-green);
+    border-color: var(--secondary-green);
+    color: #fffdbd;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(45, 80, 22, 0.3);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fffdbd;
+    transform: scale(1.05);
+}
+
+/* ============== ALERT INFO PERSONALIZADO ============== */
+.alert-info {
+    background: linear-gradient(135deg, 
+        rgba(234, 161, 102, 0.12) 0%, 
+        rgba(162, 130, 75, 0.12) 100%
+    );
+    border: 2px solid rgba(234, 197, 102, 0.3);
+    border-radius: 18px;
+    padding: 25px;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.alert-info strong {
+    color: var(--primary-green);
+    font-weight: 800;
+}
+
+.alert-info p {
+    margin-bottom: 10px;
+}
+
+.alert-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============== MEJORAS TIPOGRÁFICAS ============== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============== EFECTOS DE GLASS ============== */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============== MODO OSCURO (OPCIONAL) ============== */
+@media (prefers-color-scheme: dark) {
+    .dashboard-body::before {
+        background: rgba(0, 0, 0, 0.65);
+    }
+}
+
+/* ============== AJUSTES PARA PANTALLAS MUY GRANDES ============== */
+@media (min-width: 1400px) {
+    .container-fluid {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    .welcome-card h1 {
+        font-size: 3.5rem;
+    }
+    
+    .mode-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ============== MEJORAS DE ACCESIBILIDAD ============== */
+.btn-mode:focus-visible,
+.sidebar .nav-link:focus-visible {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 3px;
+}
+
+/* ============== ANIMACIÓN DE CARGA ============== */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading-shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+}
+
+/* ============== FIN DEL CSS ============== */

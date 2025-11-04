@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Imágenes - Draftosaurus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #2d5016; }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .image-card {
+            text-align: center;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .image-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+        .image-card img.error {
+            border-color: red;
+        }
+        .image-card img.success {
+            border-color: green;
+        }
+        .image-card p {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+        .status {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .status.ok { color: green; }
+        .status.error { color: red; }
+        .board-test {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            border: 3px solid #2d5016;
+            background-image: url('img/board-background.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test de Imágenes - Draftosaurus</h1>
+    <p><strong>Instrucciones:</strong> Sube este archivo HTML a <code>/var/www/html/draftosaurus/test-images.html</code> y ábrelo en el navegador.</p>
+
+    <!-- FONDO DEL TABLERO -->
+    <div class="section">
+        <h2>🖼️ Fondo del Tablero</h2>
+        <div class="board-test" id="boardTest">
+            Si ves este texto, el fondo NO cargó
+        </div>
+        <p class="status" id="boardStatus">Verificando...</p>
+    </div>
+
+    <!-- DINOSAURIOS -->
+    <div class="section">
+        <h2>🦕 Dinosaurios (6 imágenes)</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="img/dinos/trex.png" alt="T-Rex" id="img-trex">
+                <p><strong>T-Rex</strong></p>
+                <p class="status" id="status-trex">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dinos/triceratops.png" alt="Triceratops" id="img-triceratops">
+                <p><strong>Triceratops</strong></p>
+                <p class="status" id="status-triceratops">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dinos/stegosaurus.png" alt="Stegosaurus" id="img-stegosaurus">
+                <p><strong>Stegosaurus</strong></p>
+                <p class="status" id="status-stegosaurus">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dinos/brachiosaurus.png" alt="Brachiosaurus" id="img-brachiosaurus">
+                <p><strong>Brachiosaurus</strong></p>
+                <p class="status" id="status-brachiosaurus">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dinos/spinosaurus.png" alt="Spinosaurus" id="img-spinosaurus">
+                <p><strong>Spinosaurus</strong></p>
+                <p class="status" id="status-spinosaurus">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dinos/parasaurolophus.png" alt="Parasaurolophus" id="img-parasaurolophus">
+                <p><strong>Parasaurolophus</strong></p>
+                <p class="status" id="status-parasaurolophus">⏳ Cargando...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DADOS -->
+    <div class="section">
+        <h2>🎲 Dados (8 imágenes)</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="img/dice/none.png" alt="Sin restricción" id="img-none">
+                <p><strong>Sin restricción</strong></p>
+                <p class="status" id="status-none">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/bosque.png" alt="Bosque" id="img-bosque">
+                <p><strong>Bosque</strong></p>
+                <p class="status" id="status-bosque">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/prado.png" alt="Prado" id="img-prado">
+                <p><strong>Prado</strong></p>
+                <p class="status" id="status-prado">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/izquierda.png" alt="Izquierda" id="img-izquierda">
+                <p><strong>Izquierda</strong></p>
+                <p class="status" id="status-izquierda">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/derecha.png" alt="Derecha" id="img-derecha">
+                <p><strong>Derecha</strong></p>
+                <p class="status" id="status-derecha">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/vacio.png" alt="Vacío" id="img-vacio">
+                <p><strong>Vacío</strong></p>
+                <p class="status" id="status-vacio">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/notrex.png" alt="No T-Rex" id="img-notrex">
+                <p><strong>No T-Rex</strong></p>
+                <p class="status" id="status-notrex">⏳ Cargando...</p>
+            </div>
+            <div class="image-card">
+                <img src="img/dice/question.png" alt="Question" id="img-question">
+                <p><strong>Por defecto</strong></p>
+                <p class="status" id="status-question">⏳ Cargando...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="section">
+        <h2>📊 Resumen</h2>
+        <p id="summary">Calculando...</p>
+    </div>
+
+    <script>
+        const images = [
+            'trex', 'triceratops', 'stegosaurus', 'brachiosaurus', 'spinosaurus', 'parasaurolophus',
+            'none', 'bosque', 'prado', 'izquierda', 'derecha', 'vacio', 'notrex', 'question'
+        ];
+
+        let loaded = 0;
+        let errors = 0;
+
+        images.forEach(name => {
+            const img = document.getElementById(`img-${name}`);
+            const status = document.getElementById(`status-${name}`);
+
+            img.onload = function() {
+                this.classList.add('success');
+                status.textContent = '✅ OK';
+                status.classList.add('ok');
+                loaded++;
+                updateSummary();
+            };
+
+            img.onerror = function() {
+                this.classList.add('error');
+                status.textContent = '❌ Error 404';
+                status.classList.add('error');
+                errors++;
+                updateSummary();
+            };
+        });
+
+        // Test del fondo del tablero
+        const boardImg = new Image();
+        boardImg.src = 'img/board-background.png';
+        boardImg.onload = function() {
+            document.getElementById('boardStatus').innerHTML = '✅ Fondo del tablero cargado correctamente';
+            document.getElementById('boardStatus').classList.add('ok');
+            document.getElementById('boardTest').textContent = '';
+        };
+        boardImg.onerror = function() {
+            document.getElementById('boardStatus').innerHTML = '❌ Fondo del tablero NO encontrado (404)';
+            document.getElementById('boardStatus').classList.add('error');
+        };
+
+        function updateSummary() {
+            const total = images.length;
+            const summary = document.getElementById('summary');
+            summary.innerHTML = `
+                <strong>Total de imágenes:</strong> ${total}<br>
+                <strong style="color: green;">✅ Cargadas correctamente:</strong> ${loaded}<br>
+                <strong style="color: red;">❌ Con error (404):</strong> ${errors}<br>
+                <strong style="color: gray;">⏳ Pendientes:</strong> ${total - loaded - errors}
+            `;
+
+            if (loaded === total) {
+                summary.innerHTML += '<br><br><strong style="color: green; font-size: 18px;">🎉 ¡TODAS LAS IMÁGENES ESTÁN OK!</strong>';
+            } else if (errors > 0 && loaded + errors === total) {
+                summary.innerHTML += '<br><br><strong style="color: red; font-size: 18px;">⚠️ Faltan imágenes. Súbelas con WinSCP.</strong>';
+            }
+        }
+    </script>
+</body>
+</html>
